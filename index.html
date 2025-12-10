@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Black Panther's Hoop's - Academia de Baloncesto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Intro Animada -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-container">
+            <div class="panther-logo">
+                <div class="logo-text">BLACK</div>
+                <div class="logo-subtext">PANTHERS</div>
+                <div class="logo-tag">BASKETBALL ACADEMY</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <audio id="pantherSound" preload="auto">
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-angry-wild-panther-97.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">🏀</div>
+                    <div class="logo-text">BLACK PANTHER'S <span>HOOP'S</span></div>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Inicio</a>
+                    <a href="#about" class="nav-link">Nosotros</a>
+                    <a href="#programs" class="nav-link">Programas</a>
+                    <a href="#championships" class="nav-link">Campeonatos</a>
+                    <a href="#coaches" class="nav-link">Entrenadores</a>
+                    <a href="#gallery" class="nav-link">Galería</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </div>
+                
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="heroBackground"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">FORJAMOS <span class="highlight">CAMPEONES</span> DENTRO Y FUERA DE LA CANCHA</h1>
+                <p class="hero-description" id="heroDescription">En Team Black Panther's Hoop's no solo enseñamos baloncesto. Formamos líderes, desarrollamos carácter y creamos recuerdos que duran toda la vida.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Inscríbete Ahora</a>
+                    <a href="#championships" class="btn btn-secondary">Ver Campeonatos</a>
+                    <a href="https://wa.me/51999570619" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label">Jugadores Formados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="25">0</div>
+                        <div class="stat-label">Campeonatos Ganados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="14">0</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Dinámico -->
+    <div id="dynamicContent"></div>
+
+    <!-- Contacto -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">¿Listo para Unirte a la Manada?</h2>
+            <p class="section-subtitle">Ofrecemos clase de prueba gratuita. ¡Ven y descubre tu potencial!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicación:</strong>
+                            <p>Av Malecón Checa 195, Zárate, SJL</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Teléfono:</strong>
+                            <p>999 570 619</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <p>epllatash@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horarios:</strong>
+                            <p>Lunes a Viernes: 10:00 AM - 6:30 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/blackpantherhoops" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com/temblackpanther80" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@teamblackpanther" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/51999570619" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Interesado en:</option>
+                                <option value="mini">Mini Panthers (7-10 años)</option>
+                                <option value="junior">Junior Panthers (12-14 años)</option>
+                                <option value="elite">Elite Panthers (U15-U17)</option>
+                                <option value="info">Solo información</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">BLACK PANTHER'S <span>HOOP'S</span></div>
+                    <p>Formando campeones dentro y fuera de la cancha desde 2010.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#programs">Programas</a></li>
+                        <li><a href="#championships">Campeonatos</a></li>
+                        <li><a href="#coaches">Entrenadores</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <ul>
+                        <li>Mini Panthers: 10:00 AM - 11:30 AM</li>
+                        <li>Junior Panthers: 3:00 PM - 4:30 PM</li>
+                        <li>Elite Panthers: 5:00 PM - 6:30 PM</li>
+                        <li>Lunes, Miércoles, Viernes</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Team Black Panther's Hoop's. Todos los derechos reservados.</p>
+                <p class="admin-link">
+                    <a href="admin/index.html" id="adminAccess">Acceso Admin</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
